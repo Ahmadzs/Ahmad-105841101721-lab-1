@@ -1,25 +1,20 @@
 import { StyleSheet, Text, View, Image, Button } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { Button } from 'react-native';
+import { Text } from 'react-native';
+import TextCustom from './Text.Js';
 
 export default function App() {
   return (
-
-    <View style={{ flex: 1, }}>
-      <View style={{ flex: 1, flexDirection : 'row' }}>
-        <View style={{ flex: 1, flexDirection : 'colum' }}>
-          <View style={{ flex: 1, backgroundColor: 'purple' }}></View>
-            <View style={{ flex: 1, backgroundColor: 'brown' }}></View>
-              </View>
-      <View style={{ flex: 1, flexDirection : 'colum' }}>
-        <View style={{ flex: 1, flexDirection : 'row' }}>
-          <View style={{ flex: 1, backgroundColor: 'yellow' }}></View>
-            <View style={{ flex: 1, backgroundColor: 'grey' }}></View>
-              </View>
-        </View> 
-      </View>
-    <View style={{ flex: 1, backgroundColor : 'green' }}>
-      </View>
-        </View> 
+    <SafeAreaView style={{
+      flex: 1,
+      backgroundColor: 'white',
+    }}>
+      <TextCustom />
+      <View style={{
+        alignItems: 'center',
+      }}>
+        <\ButtonCustom>
+        </SafeAreaView>
   );
 }
-
