@@ -11,5 +11,4 @@ const Images = () => {
 }
 
 export default Images;
-
 const styles = StyleSheet.create({});
