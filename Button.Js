@@ -1,51 +1,52 @@
-import { StyleSheet, Text, View, Image, Button } from 'react-native';
+import React from "react";
+import { View, Text } from 'react-native';
 
-
-export default function App() {
-  return (
-      <View style={{
-        flex:1,
-      backgroundColor: 'white',
-      justifyContent: 'center',
-      alignItems: 'flex-end',
-      flexDirection: 'row',
-      marginBottom: 100,
-    }}>
-      <View style={{
-        backgroundColor: 'Yellow',
-        width: 150,
-        height: 55,
-        margin: 10,
-        borderRadius: 10,
-        justifyContent: 'center',
-      }}>
-        <Text style={{
-          color: 'white',
-          textAlign: 'center',
-          fontSize: 23,
-          fontWeight: 'bold'
+const CustomButton = () => {
+    return (
+        <View style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            padding: 20,
+            marginBottom: 80
         }}>
-          Login
-        </Text>
-      </View>
-      <View style={{
-        backgroundColor: 'Green',
-        width: 150,
-        height: 55,
-        margin: 10,
-        borderRadius: 10,
-        justifyContent: 'center',
-      }}>
-        <Text style={{
-          color: 'white',
-          textAlign: 'center',
-          fontSize: 23,
-          fontWeight: 'bold',
-        }}>
-          Register
-        </Text>
-      </View>
-    </View>
-  );
+            <View style={{
+                backgroundColor: 'green',
+                width: 100,
+                height: 50,
+                marginRight: 10,
+                borderRadius: 10,
+                justifyContent: 'center',
+                alignItems: 'center',
+            }}>
+                <Text style={{
+                    color: 'white',
+                    fontSize: 20,
+                    fontWeight: 'bold',
+                }}>
+                    Login
+                </Text>
+            </View>
+            <View style={{
+                backgroundColor: 'green',
+                width: 100,
+                height: 50,
+                marginRight: 10,
+                borderRadius: 10,
+                justifyContent: 'center',
+                alignItems: 'center',
+            }}>
+                <Text style={{
+                    color: 'white',
+                    fontSize: 20,
+                    fontWeight: 'bold',
+                }}>
+                    Register
+                </Text>
+            </View>
+        </View>
+    );
 }
 
+export default CustomButton;

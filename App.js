@@ -1,20 +1,18 @@
-import { StyleSheet, Text, View, Image, Button } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { Button } from 'react-native';
-import { Text } from 'react-native';
-import TextCustom from './Text.Js';
+import React from "react";
+import { SafeAreaView, View, Image } from "react-native";
+import CustomButton from "./Button";
+import Teks from "./teks";
 
 export default function App() {
   return (
-    <SafeAreaView style={{
-      flex: 1,
-      backgroundColor: 'white',
-    }}>
-      <TextCustom />
-      <View style={{
-        alignItems: 'center',
-      }}>
-        <\ButtonCustom>
-        </SafeAreaView>
+   <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+          <Teks />
+          <Image
+            source={require('./assets/green.jpeg')}
+            style={{ width: 200, height: 200, marginVertical: 60 }} />
+          <CustomButton />
+        </View>
+      </SafeAreaView>
   );
 }
