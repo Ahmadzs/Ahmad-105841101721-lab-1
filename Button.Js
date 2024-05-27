@@ -9,7 +9,7 @@ const CustomButton = () => {
             alignItems: 'center',
             flexDirection: 'row',
             padding: 20,
-            marginBottom: 80
+            marginBottom: 30
         }}>
             <View style={{
                 backgroundColor: 'green',
