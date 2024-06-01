@@ -14,7 +14,7 @@ const teks = () => {
       <Text style={{ color: 'grey', fontSize: 24, fontWeight: 'bold', textAlign: 'center' }}>
         WELCOME
       </Text>
-      <Text style={{ color: 'grey', fontSize: 24, fontWeight: 'bold' }}>
+     <Text style={{ color: 'grey', fontSize: 24, fontWeight: 'bold' }}>
         GREENCYCLE
       </Text>
     </View>
