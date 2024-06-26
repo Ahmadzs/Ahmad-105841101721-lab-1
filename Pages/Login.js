@@ -1,5 +1,6 @@
 import React from "react";
-import { View } from "react-native";
+import {View, TouchableOpacity} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import Header from "../component/header";
 import Tombol from "../component/Tombol";
 import Icon from "../component/Icon";
@@ -7,6 +8,7 @@ import SosmedLog from "../component/SosmedLog";
 import Kolom from "../component/Kolom";
 
 const Login = () => {
+  const navigation = useNavigation();
   return (
     <View>
       <View
@@ -33,6 +35,16 @@ const Login = () => {
           borderColor={"grey"}
           placeholderTextColor={"white"}
         />
+      </View>
+
+      <View 
+        style={{
+          marginLeft: 250,
+          marginTop: 10
+        }}>
+          <TouchableOpacity onPress={() => navigation.navigate("ForgotPassword")}>
+          <SosmedLog text="Forgot Password" />
+          </TouchableOpacity>
       </View>
 
       <View
@@ -73,8 +85,8 @@ const Login = () => {
             marginTop: 20,
           }}
         >
-          <Icon ImageSource={require("./assets/google.png")} />
-          <Icon ImageSource={require("./assets/facebook.png")} />
+          <Icon ImageSource={require("../assets/google.png")} />
+          <Icon ImageSource={require("../assets/facebook.png")} />
         </View>
       </View>
     </View>

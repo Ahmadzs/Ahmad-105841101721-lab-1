@@ -1,31 +1,53 @@
-import { Text, View } from "react-native";
-import { useFonts } from "expo-font";
+import * as React from "react";
+import { View, Text, Button } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-  const App = () => {
-    const [fontsLoaded, fontError] = useFonts({
-      "Metro-Bold": require("./assets/fonts/Metropolis-Bold.otf"),
-      "Metro-Medium": require("./assets/fonts/Metropolis-Medium.otf"),
-      "Metro-SemiBold": require("./assets/fonts/Metropolis-SemiBold.otf"),
-      "Metro-Black": require("./assets/fonts/Metropolis-Black.otf"),
-      });
-    if (!fontsLoaded) return
-      <View>
-      <Text>Font tidak ditemukan!</Text>
-      </View>
+import Login from "./Pages/Login";
+import SignUp from "./Pages/SignUp";
+import ForgotPassword from "./Pages/ForgotPassword";
 
-      return (
-        <View style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}> 
+const Tab = createBottomTabNavigator();
 
-      <Text>Font Biasa</Text>
-      <Text style={{ fontFamily: "Metro-Bold", fontSize: 30, }}>Metro Bold</Text>
-      <Text style={{ fontFamily: "Metro-Medium", fontSize: 30, alignItems: 'center' }}>Metro Medium</Text>
-      <Text style={{ fontFamily: "Metro-SemiBold", fontSize: 30, alignItems: 'center' }}>Metro SemiBold</Text>
-      <Text style={{ fontFamily: "Metro-Black", fontSize: 30, alignItems: 'center' }}>Metro Black</Text>
+function MyTabs() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{ headerShown: false }}
+      />
+      <Tab.Screen name="Login" component={Login} />
+    </Tab.Navigator>
+  );
+}
+
+function HomeScreen({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <Text>Home Screen</Text>
+      <Button
+        title="Go to Login"
+        onPress={() => navigation.navigate("Login")}
+      />
     </View>
   );
-};
+}
+
+const Stack = createNativeStackNavigator();
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="MyTabs" component={MyTabs} />
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="SignUp" component={SignUp} />
+        <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
 export default App;

@@ -1,14 +1,13 @@
 import React from "react";
 import { View, StyleSheet, Image } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 const Icon = ({ ImageSource}) => {
     return (
-        <SafeAreaView>
+       
         <View style={styles.container}>
             <Image source={ImageSource} style={styles.image}/>
         </View>
-        </SafeAreaView>
+        
     );
 }
 

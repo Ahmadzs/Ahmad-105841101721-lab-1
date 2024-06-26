@@ -1,10 +1,24 @@
 import React from "react";
 import { View, Text } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { useFonts } from 'expo-font';
 
-const SosmedLog = ({ text = "Default Text", color = "white", fontSize = 13 }) => {
+
+const SosmedLog = ({ text, color = "black", fontSize = 13 }) => {
+
+    const [fontsLoaded, fontError] = useFonts({
+        'Bold': require('../assets/fonts/Metropolis-Bold.otf'),
+        'Medium' : require('../assets/fonts/Metropolis-Medium.otf'),
+      });
+          if (!fontsLoaded) {
+            return (
+          <View>
+              <Text>Font tidak ditemukan !</Text>
+          </View>
+        );
+    }
+    
     return (
-        <SafeAreaView>
+    
         <View style={{
             alignItems: 'center',
         }}>
@@ -16,7 +30,6 @@ const SosmedLog = ({ text = "Default Text", color = "white", fontSize = 13 }) =>
             {text}
         </Text>
         </View>
-        </SafeAreaView>
         )
     }
 

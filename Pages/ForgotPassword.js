@@ -1,10 +1,10 @@
 import React from "react";
+import { View } from 'react-native';
 import { SafeAreaView } from "react-native-safe-area-context";
-import Header from "./component/header";
-import Kolom from "./component/Kolom";
-import SosmedLog from "./component/SosmedLog";
-import { View } from "react-native";
-import Tombol from "./component/Tombol";
+import Header from "../component/header";
+import Kolom from "../component/Kolom";
+import SosmedLog from "../component/SosmedLog";
+import Tombol from "../component/Tombol";
 
 const ForgotPassword = () => {
     return (

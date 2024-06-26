@@ -1,10 +1,23 @@
 import React from "react";
 import { View, Text } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { useFonts } from 'expo-font';
 
-const Header = ({ text }) => {
+const Header = ({text = "Default Text" }) => {
+
+    const [fontsLoaded, fontError] = useFonts({
+        'Bold': require('../assets/fonts/Metropolis-Bold.otf'),
+        'Medium' : require('../assets/fonts/Metropolis-Medium.otf'),
+      });
+          if (!fontsLoaded) {
+            return (
+          <View>
+              <Text>Font tidak ditemukan !</Text>
+          </View>
+        );
+    }
+
     return (
-        <SafeAreaView>
+      
         <View style={{
             marginBottom: -50,
             alignItems: 'center',
@@ -17,7 +30,7 @@ const Header = ({ text }) => {
             {text}
             </Text>
         </View>
-        </SafeAreaView>
+        
         )
     };
 
